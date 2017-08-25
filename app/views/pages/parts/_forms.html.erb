@@ -1,0 +1,387 @@
+<h3>Forms</h3>
+
+<h5>Input fields</h5>
+
+<div class="row">
+   <form class="col s12">
+      <div class="row">
+         <div class="input-field col s6">
+            <input class="validate" id="first_name" placeholder="Placeholder" type="text"/>
+            <label for="first_name"> First Name</label>
+         </div>
+         <div class="input-field col s6">
+            <input class="validate" id="last_name" type="text"/>
+            <label for="last_name"> Last Name</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input class="validate" disabled="" id="disabled" type="text"/>
+            <label for="disabled"> Disabled</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input class="validate" id="password" type="password"/>
+            <label for="password"> Password</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input class="validate" id="email1" type="email"/>
+            <label for="email1"> Email</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col s12">
+            This is an inline input field:
+            <div class="input-field inline">
+               <input class="validate" id="email2" type="email" />
+               <label data-error="wrong" data-success="right" for="email2"> Email
+               </label>
+            </div>
+         </div>
+      </div>
+   </form>
+</div>
+
+<h5>Prefilling Text Inputs</h5>
+<div class="row">
+   <div class="input-field col s6">
+      <input class="validate" id="first_name2" type="text" value="Alvin"/>
+      <label class="active" for="first_name2"> First Name
+      </label>
+   </div>
+</div>
+
+<h5>Icon Prefixes</h5>
+<div class="row">
+   <form class="col s12">
+      <div class="row">
+         <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input class="validate" id="icon_prefix" type="text"/>
+            <label for="icon_prefix"> First Name</label>
+         </div>
+         <div class="input-field col s6">
+            <i class="material-icons prefix">phone</i>
+            <input class="validate" id="icon_telephone" type="tel"/>
+            <label for="icon_telephone"> Telephone
+            </label>
+         </div>
+      </div>
+   </form>
+</div>
+
+<h5>Custom Error or Success Messages</h5>
+<div class="row">
+   <form class="col s12">
+      <div class="row">
+         <div class="input-field col s12">
+            <input class="validate" id="email" type="email" />
+            <label data-error="wrong" data-success="right" for="email"> Email
+            </label>
+         </div>
+      </div>
+   </form>
+</div>
+
+<h5>Textarea</h5>
+<div class="row">
+   <form class="col s12">
+      <div class="row">
+         <div class="input-field col s12">
+            <textarea class="materialize-textarea" id="textarea1">
+            </textarea><label for="textarea1"> Textarea
+            </label>
+         </div>
+      </div>
+   </form>
+</div>
+<div class="row">
+   <form class="col s12">
+      <div class="row">
+         <div class="input-field col s6">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea class="materialize-textarea" id="icon_prefix2">
+            </textarea><label for="icon_prefix2"> First Name
+            </label>
+         </div>
+      </div>
+   </form>
+</div>
+
+<h5>Select</h5>
+<div class="input-field col s12">
+   <select>
+      <option disabled="" selected="" value=""> Choose your option</option>
+      <option value="1"> Option 1</option>
+      <option value="2"> Option 2</option>
+      <option value="3"> Option 3</option>
+   </select>
+   <label>Materialize Select</label>
+</div>
+<div class="input-field col s12">
+   <select multiple="">
+      <option disabled="" selected="" value=""> Choose your option</option>
+      <option value="1"> Option 1</option>
+      <option value="2"> Option 2</option>
+      <option value="3"> Option 3</option>
+   </select>
+   <label>Materialize Multiple Select</label>
+</div>
+<div class="input-field col s12">
+   <select multiple="">
+      <optgroup>
+         <option value="1"> Option 1</option>
+         <option value="2"> Option 2</option>
+      </optgroup>
+      <optgroup>
+         <option value="3"> Option 3</option>
+         <option value="4"> Option 4</option>
+      </optgroup>
+   </select>
+   <label>Optgroups</label>
+</div>
+<div class="input-field col s12 m6">
+   <select class="icons">
+      <option disabled="" selected="" value=""> Choose your option</option>
+      <option class="circle" data-icon="http://materializecss.com/images/sample-1.jpg"
+         value=""> example 1</option>
+      <option class="circle" data-icon="http://materializecss.com/images/office.jpg" v
+         alue=""> example 2</option>
+      <option class="circle" data-icon="http://materializecss.com/images/yuna.jpg" val
+         ue=""> example 3</option>
+   </select>
+   <label>Images in select</label>
+</div>
+
+<div class="input-field col s12 m6">
+   <select class="icons">
+      <option disabled="" selected="" value=""> Choose your option</option>
+      <option class="left circle" data-icon="http://materializecss.com/images/sample-1
+         .jpg" value=""> example 1</option>
+      <option class="left circle" data-icon="http://materializecss.com/images/office.j
+         pg" value=""> example 2</option>
+      <option class="left circle" data-icon="http://materializecss.com/images/yuna.jpg
+         " value=""> example 3</option>
+   </select>
+   <label>Images in select</label>
+</div>
+
+<label>Browser Select</label>
+<select class="browser-default">
+   <option disabled="" selected="" value=""> Choose your option</option>
+   <option value="1"> Option 1</option>
+   <option value="2"> Option 2</option>
+   <option value="3"> Option 3
+   </option>
+</select>
+
+<label>Materialize Disabled</label>
+<select disabled="">
+   <option disabled="" selected="" value=""> Choose your option</option>
+   <option value="1"> Option 1</option>
+   <option value="2"> Option 2</option>
+   <option value="3"> Option 3</option>
+</select>
+
+<label>Browser Disabled</label>
+<select class="browser-default" disabled="">
+   <option disabled="" selected="" value=""> Choose your option</option>
+   <option value="1"> Option 1</option>
+   <option value="2"> Option 2</option>
+   <option value="3"> Option 3
+   </option>
+</select>
+
+<h5>Radio Buttons</h5>
+<form action="#">
+   <p>
+      <input id="test-input0" name="group1" type="radio" />
+      <label for="test-input0"> Red</label>
+   </p>
+   <p>
+      <input id="test-input1" name="group1" type="radio" />
+      <label for="test-input1"> Yellow</label>
+   </p>
+   <p>
+      <input class="with-gap" id="test-input2" name="group1" type="radio" />
+      <label for="test-input2"> Green</label>
+   </p>
+   <p>
+      <input disabled="disabled" id="test-input3" name="group1" type="radio" />
+      <label for="test-input3"> Brown
+      </label>
+   </p>
+   <p>
+      <input checked="" class="with-gap" id="test-input4" name="group3" type="radio" /
+         >
+      <label for="test-input4"> Red</label>
+   </p>
+</form>
+<br/>
+
+<h5>Checkbox</h5>
+<form action="#">
+   <p>
+      <input id="test-input5" type="checkbox" />
+      <label for="test-input5"> Red</label>
+   </p>
+   <p>
+      <input checked="checked" id="test-input6" type="checkbox" />
+      <label for="test-input6"> Yellow</label>
+   </p>
+   <p>
+      <input checked="checked" class="filled-in" id="filled-in-box" type="checkbox" />
+      <label for="filled-in-box"> Filled in</label>
+   </p>
+   <p>
+      <input id="indeterminate-checkbox" type="checkbox" />
+      <label for="indeterminate-checkbox"> Indeterminate Style</label>
+   </p>
+   <p>
+      <input checked="checked" disabled="disabled" id="test-input7" type="checkbox" />
+      <label for="test-input7"> Green</label>
+   </p>
+   <p>
+      <input disabled="disabled" id="test-input8" type="checkbox" />
+      <label for="test-input8"> Brown
+      </label>
+   </p>
+</form>
+
+<h5>Switch</h5>
+<!--Switch-->
+<div class="switch">
+   <label>
+   Off
+   <input type="checkbox" />
+   <span class="lever">
+   </span>On
+   </label>
+</div>
+<!--Disabled Switch-->
+<div class="switch">
+   <label>
+   Off
+   <input disabled="" type="checkbox" />
+   <span class="lever">
+   </span>On
+   </label>
+</div>
+<h5>Files</h5>
+<form action="#">
+   <div class="file-field input-field">
+      <div class="btn">
+         <span>File</span>
+         <input multiple="" type="file" />
+      </div>
+      <div class="file-path-wrapper">
+         <input class="file-path validate" type="text" />
+      </div>
+   </div>
+</form>
+<br />
+<h5>no-Ui slider</h5>
+<div id="range-slider">
+</div>
+<script>
+   var slider = document.getElementById('range-slider');
+   noUiSlider.create(slider, {
+   start: [20, 80],
+   connect: true,
+   step: 1,
+   range: {
+     'min': 0,
+     'max': 100
+   },
+    format: wNumb({
+        decimals: 0
+    })
+   });
+</script>
+
+<br/>
+
+<h5>HTML5 Slider</h5>
+<form action="#">
+   <p class="range-field"><input id="test-input9" max="100" min="0" type="range"/></p>
+</form>
+
+<h5>Date Picker</h5>
+<input class="datepicker" type="text" />
+<script>
+   $('.datepicker').pickadate({
+     selectMonths: true, // Creates a dropdown to control month
+     selectYears: 15 // Creates a dropdown of 15 years to control year
+   });
+</script>
+
+<h5>Time Picker</h5>
+<input class="timepicker" type="text" />
+<script>
+   $('.timepicker').pickatime({
+     default: 'now', // Set default time
+     fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+     twelvehour: false, // Use AM/PM or 24-hour format
+     donetext: 'OK', // text for done-button
+     cleartext: 'Clear', // text for clear-button
+     canceltext: 'Cancel', // Text for cancel-button
+     autoclose: false, // automatic close timepicker
+     ampmclickable: true, // make AM PM clickable
+     aftershow: function(){} //Function for after opening timepicker   
+   });
+   
+</script>
+<h5>Character Counter</h5>
+<div class="row">
+   <form class="col s12">
+      <div class="row">
+         <div class="input-field col s6">
+            <input data-length="10" id="input_text" type="text" />
+            <label for="input_text"> Input text</label>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="input-field col s12">
+            <textarea class="materialize-textarea" data-length="120" id="textarea0">
+            </textarea><label for="textarea1"> Textarea
+            </label>
+         </div>
+      </div>
+   </form>
+</div>
+
+<h5>Autocomplete</h5>
+<div class="row">
+   <div class="col s12">
+      <div class="row">
+         <div class="input-field col s12">
+            <i class="material-icons prefix">textsms</i>
+            <input class="autocomplete" id="autocomplete-input" type="text" />
+            <label for="autocomplete-input"> Autocomplete
+            </label>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script>
+   $('input.autocomplete').autocomplete({
+   
+     data: {
+       "Apple": null,
+       "Microsoft": null,
+       "Google": 'http://placehold.it/250x250'
+     },
+   
+     limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+        onAutocomplete: function(val) { // Callback function when value is autcompleted.
+     },
+   
+     minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+   
+   });
+</script>

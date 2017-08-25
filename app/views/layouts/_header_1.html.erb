@@ -1,0 +1,53 @@
+      <header class="navbar-fixed">
+         <nav>
+            <div class="nav-wrapper">
+               <a class="button-collapse" data-activates="slide-out" data-turbolinks="false" href="#" id="sidenav">
+               <i class="material-icons">menu</i></a>
+               <a class="brand-logo center" href="/" id="logo-container">
+                <img height="60" src="/rails-logo.svg" style="fill: white !important;" width="112" />
+               </a>
+               <ul class="right hide-on-med-and-down" id="nav-mobile">
+                  <li><a href="/">Home</a></li>
+                  <li>
+                     <a href="/demos">
+                     <span>Demos</span>
+                     <span class="new badge">4</span>
+                     </a>
+                  </li>
+                  <li><a href="/parts">Parts</a></li>
+                  <!--Dropdown Trigger -->
+                  <% if user_signed_in? %>
+                  <li>
+                     <a class="dropdown-button" data-activates="dropdown1" href="#!">
+                     <span><%= current_user.email %>
+                     </span><i class="material-icons right">arrow_drop_down</i>
+                     </a>
+                  </li>
+                  <% else %>
+                  <li><%= link_to (t :sign_in), new_user_session_url %></li>
+                  <% end %>
+               </ul>
+               <% if user_signed_in? %>
+               <ul class="dropdown-content" id="dropdown1">
+                  <li><%= link_to (t :profile), edit_user_registration_url %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to (t :sign_out), destroy_user_session_url, data: {method: :delete} %></li>
+               </ul>
+               <% end %>
+            </div>
+         </nav>
+         <!--Tap Target Structure-->
+         <div class="tap-target sidenav" data-activates="sidenav">
+            <div class="tap-target-content">
+               <h5>Open Sidebar</h5>
+               <p>Tell me what not working</p>
+            </div>
+         </div>
+         <!-- % if current_hit <= 1 %>
+            <script>
+                  $('.tap-target.sidenav').tapTarget('open');   
+            </script>
+         <% end %-->
+      </header>
+
+

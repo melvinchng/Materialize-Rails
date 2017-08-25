@@ -1,0 +1,22 @@
+<div class="form-padding">
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span class="card-title center">Log In</span>
+        <div class="divider"></div>
+
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= f.input :email, required: true, autofocus: true %>
+              <%= f.input :password, required: true, hint: false %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            
+            <div class="form-actions center">
+              <%= f.button :submit, "Log in" %>
+            </div>
+          <% end %>    
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

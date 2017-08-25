@@ -1,0 +1,28 @@
+  <ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <%= image_tag("office.jpg") %>
+      </div>
+      <a href="#!user"><%= image_tag("yuna.jpg", class: "circle") %></a>
+      <% if user_signed_in? %>
+        <a><span class="white-text name">Hello World</span></a>
+        <a><span class="white-text email"><%= current_user.email %></span></a>
+      <% else %>
+        <a><span class="white-text name">Welcome</span></a>
+      <% end %>
+    </div></li>
+    <!-- li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li -->
+    <li><a href="/">Home</a></li>
+    <li><a href="/demos">Demos</a></li>
+    <li><a href="/parts">Parts</a></li>
+   
+    <% if user_signed_in? %>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader"><i class="material-icons">account_circle</i>User Profile</a></li>
+      <li><%= link_to (t :profile), edit_user_registration_url %></li>
+      <li><%= link_to (t :sign_out), destroy_user_session_url, data: {method: :delete} %></li>
+    <% else %>
+      <li><%= link_to (t :sign_in), new_user_session_url %></li>
+    <% end %>
+  </ul>
+  <!-- a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a -->

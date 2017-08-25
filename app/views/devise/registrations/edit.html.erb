@@ -1,0 +1,42 @@
+<div class="form-padding">
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span class="card-title center">Edit <%= resource_name.to_s.humanize %></span>
+        <div class="divider"></div>
+
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true %>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+              <% end %>
+
+              <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+              <%= f.input :password_confirmation, required: false %>
+              <%= f.input :current_password, hint: "We need your current password to confirm your changes", required: true %>
+            </div>
+
+            <span class="card-title center">Update my account</span>
+            <div class="divider"></div>
+            <div class="form-actions">
+              <%= f.button :submit, "Update" %>
+            </div>
+          <% end %>
+
+          <span class="card-title center">Cancel my account</span>
+          <div class="divider"></div>
+
+          <p>Unhappy?</p>
+          
+          <%= link_to "Back", :back, class: "btn"  %>
+          <%= link_to "Cancel my account", registration_path(resource_name), class: "btn", data: { confirm: "Are you sure?" }, method: :delete %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

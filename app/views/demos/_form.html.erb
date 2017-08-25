@@ -1,0 +1,55 @@
+<%= simple_form_for(@demo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">title</i>
+          <%= f.label :title %>
+          <%= f.text_field :title, placeholder: "Please use appropriate title" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">descriptions</i>
+          <%= f.label :body %>
+          <%= f.text_field :body, placeholder: "Please use appropriate punctuation" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">face</i>
+          <%= f.radio_button :body, "m" %>
+          <%= f.label :gender_m, "Male" %>
+          <%= f.radio_button :body, "f" %>
+          <%= f.label :gender_f, "Female" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">published</i>
+          <%= f.check_box :body, class:"checkbox" %>
+          <%= f.label :published %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">cake</i>
+          <%= f.text_field :body, class:"datepicker" %>
+          <%= f.label :birthday %>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+  <%= f.button :submit, class: "btn" %>
+
+<% end %>
+
+<script type="text/javascript">
+$('.datepicker').pickadate({
+  selectMonths: true, // Creates a dropdown to control month
+  selectYears: 15 // Creates a dropdown of 15 years to control year
+});
+</script>

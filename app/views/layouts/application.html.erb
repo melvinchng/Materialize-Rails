@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Materialize</title>
+      
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta content="/" name="turbolinks-root" />
+      <meta content="no-preview" name="turbolinks-cache-control" />
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+      <%= csrf_meta_tags %>
+   </head>
+   <body>
+
+      <%= render 'layouts/header_1' %>
+      <%= render 'layouts/side_bar' %>
+
+      <% flash.each do |message_type, message| %>
+        <%= javascript_tag "Materialize.toast('#{message}', 4000)" %>
+      <% end %> 
+
+      <%= render 'layouts/main' %>
+
+      <% if current_page?(root_path) %>
+        <%= render 'layouts/footer_2' %>
+      <% else %>
+        <style>
+            .page-footer { padding-top: 0px; }
+        </style>
+        
+        <%= render 'layouts/footer_1' %>
+      <% end %>
+
+   </body>
+</html>

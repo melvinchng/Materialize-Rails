@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scal
+         able=no" name="viewport" />
+      <meta content="/" name="turbolinks-root" />
+      <meta content="no-preview" name="turbolinks-cache-control" />
+      <title>Materialize</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+      <%= csrf_meta_tags %>
+      <% swatch = %w(lighten darken accent).sample %>
+   </head>
+   <body>
+      <header class="navbar-fixed">
+         <nav class="red darken-1">
+            <div class="nav-wrapper container">
+               <a class="button-collapse show-on-large" data-activates="slide-out" data-turbolinks="false" href="#" id="sidenav">
+               <i class="material-icons right">apps</i>
+               </a><a class="brand-logo" href="/" id="logo-container">
+               <img height="60" src="/rails-logo.svg" style="fill: white !important;" width="112" />
+               </a>
+               <ul class="right" id="nav-mobile">
+                  <li><a href="/">Home</a></li>
+                  <li>
+                     <a href="/posts">
+                     <span>Posts</span>
+                     <span class="new badge">4</span>
+                     </a>
+                  </li>
+                  <li><a href="/components"> Components</a></li>
+                  <!--Dropdown Trigger -->
+                  <% if user_signed_in? %>
+                  <li>
+                     <a class="dropdown-button" data-activates="dropdown1" href="#!">
+                     <span><%= current_user.email %>
+                     </span><i class="material-icons right">arrow_drop_down</i>
+                     </a>
+                  </li>
+                  <% else %>
+                  <li><%= link_to (t :sign_in), new_user_session_url %>
+                  </li>
+                  <% end %>
+               </ul>
+               <% if user_signed_in? %>
+               <ul class="dropdown-content" id="dropdown1">
+                  <li><%= link_to (t :profile), edit_user_registration_url %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to (t :sign_out), destroy_user_session_url, data: {method: :delete} %></li>
+               </ul>
+               <% end %>
+            </div>
+         </nav>
+         <!--Tap Target Structure-->
+         <div class="tap-target sidenav red darken-1" data-activates="sidenav">
+            <div class="tap-target-content">
+               <h5>Open Sidebar</h5>
+               <p>Tell me what not working</p>
+            </div>
+         </div>
+         <% if current_hit <= 1 %>
+            <script>
+                  $('.tap-target.sidenav').tapTarget('open');   
+            </script>
+         <% end %>
+      </header>
+      <aside>
+         <ul class="side-nav" id="slide-out">
+            <li>
+               <div class="userView">
+                  <div class="background">
+                     <img src="http://materializecss.com/images/office.jpg" />
+                  </div>
+                  <a href="#!user">
+                  <img class="circle" src="http://materializecss.com/images/yuna.jpg" />
+                  </a><a href="#!name">
+                  <span class="white-text name">Yuna</span>
+                  </a><a href="#!email">
+                  <span class="white-text email">yunalis@gmail.com</span>
+                  </a>
+               </div>
+            </li>
+            <li>
+               <a href="/posts">
+                  <i class="material-icons">cloud</i>
+                  <span>Posts</span>
+               </a>
+            </li>
+            <li>
+               <a href="/components">
+                  <i class="material-icons">settings</i>
+                  <span>Component</span>
+               </a>
+            </li>
+            <li>
+               <div class="divider"></div>
+            </li>
+            <li>
+               <a class="subheader">Give some star</a>
+            </li>
+            <li>
+               <a class="waves-effect" href="https://github.com/mkhairi/materialize-sass"> GitH
+               ub
+               </a>
+            </li>
+         </ul>
+      </aside>
+      <main>
+         <%= yield(:jumbotron) if content_for?(:jumbotron) %>
+         <% if devise_controller? %>
+         <section id="login">
+            <div class="container-fluid pt-3">
+               <div class="row">
+                  <div class="col s4 offset-s4">
+                     <%= yield %>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <% else %>
+         <div class="container">
+            <%= yield %>
+         </div>
+         <% end %>
+      </main>
+      <footer>
+      </footer>
+      <script>
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'
+         );
+      
+         ga('create', 'UA-41818279-4', 'auto');   
+         ga('send', 'pageview');
+      </script>
+   </body>
+</html>

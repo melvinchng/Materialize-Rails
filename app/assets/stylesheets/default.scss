@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.card {
+    max-width: 500px;
+    margin: auto;
+}
+
+.card-default {
+    max-width: 100%;
+}
+
+.form-padding {
+    padding-top: 50px;
+}
+
+//Footer
+.footer-color {
+    a {
+        color: white;
+    }
+}

@@ -1,0 +1,86 @@
+<div class="form-padding">
+<div class="row">
+<div class="col s12" id="admin">
+   <div class="card material-table card-default">
+      <div class="table-header">
+         <h5>Demos</h5>
+         <div class="actions" data-turbolinks="false">
+            <a class="search-toggle waves-effect btn-flat nopadding" href="#">
+            <i class="material-icons">search
+            </i>
+            </a>
+         </div>
+      </div>
+      <table class="table" id="dttb">
+         <thead>
+            <tr>
+               <th width="30%">Title</th>
+               <th>Body</th>
+               <th>
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <% @demos.each do |demo|
+               %>
+            <tr>
+               <td><%= demo.title %></td>
+               <td><%= demo.body %></td>
+               <td class="right-align">
+                  <%= link_to 'Show ', demo %>
+                  <%= link_to ' Edit ', edit_demo_path(demo) %>
+                  <%= link_to ' Destroy', demo, data: {:confirm => 'Are you sure?'}, :method => :delete %>
+               </td>
+            </tr>
+            <% end %>
+         </tbody>
+      </table>
+   </div>
+</div>
+</div>
+<div class="fixed-action-btn">
+<a class="waves-effect waves-light btn btn-floating btn-large cyan" href="<%= new_demo_path %>" id="newpost">
+<i class="large material-icons">add</i>
+</a>
+</div>
+<!--Tap Target Structure-->
+<div class="tap-target newpost cyan" data-activates="newpost">
+<div class="tap-target-content">
+   <h5>Start posting</h5>
+   <p>Tell me what not working
+   </p>
+</div>
+</div>
+</div>
+
+<!-- 
+<p id="notice"><%= notice %></p>
+
+<h1>Demos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @demos.each do |demo| %>
+      <tr>
+        <td><%= demo.title %></td>
+        <td><%= demo.body %></td>
+        <td><%= link_to 'Show', demo %></td>
+        <td><%= link_to 'Edit', edit_demo_path(demo) %></td>
+        <td><%= link_to 'Destroy', demo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Demo', new_demo_path %>
+-->
