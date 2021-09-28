@@ -52,6 +52,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    crass (1.0.6)
     dalli (2.7.6)
     devise (4.3.0)
       bcrypt (~> 3.0)
@@ -78,7 +79,8 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    loofah (2.0.3)
+    loofah (2.12.0)
+      crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
@@ -121,8 +123,8 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.3)
-      loofah (~> 2.0)
+    rails-html-sanitizer (1.4.2)
+      loofah (~> 2.3)
     rails-ujs (0.1.0)
       railties (>= 3.1)
     rails_12factor (0.0.3)
