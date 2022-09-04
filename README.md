@@ -22,7 +22,7 @@ This template is written in such a way that you can develop on top of the templa
  * Rails 5.0
 
 ### Demo
-* [Example site](http://materialize-rails-template.herokuapp.com)
+* [Example site](https://yhxatdvfiz.us12.qoddiapp.com)
 
 ### Known Issue:
  * If you are using Windows platform, uninstall all the `bcrypt` gems and reinstall the gems manually using the following command: `gem install bcrypt --platform=ruby`.
