@@ -42,7 +42,7 @@ gem 'bcrypt', platforms: :ruby
 # gem 'capistrano-rails', group: :development
 
 group :production do
-  #gem 'pg'                     # not needed with current config. Enable if you want to enable Postgres
+  gem 'pg'                     # not needed with current config. Enable if you want to enable Postgres
   gem 'rails_12factor'
   gem 'dalli'
 end
